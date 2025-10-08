@@ -1,0 +1,42 @@
+---
+import "../global.css";
+import Navbar from "../components/Navbar.astro";
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="icon" href="/logo.png" type="image/png" />
+		<link
+			href="https://cdn.boxicons.com/fonts/basic/boxicons.min.css"
+			rel="stylesheet"
+		/>
+
+		<title>🎓 UniWave - Landing 🎓</title>
+	</head>
+	<body>
+		<Navbar />
+		<main class="fade-in">
+			<slot />
+		</main>
+	</body>
+</html>
+
+<style>
+	html {
+		background-color: var(--bg-color);
+		height: 100vh;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+	}
+	body {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+		max-width: 1900px;
+	}
+</style>

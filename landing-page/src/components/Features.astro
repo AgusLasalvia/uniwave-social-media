@@ -1,0 +1,300 @@
+---
+// src/components/Features.astro
+
+const features = [
+	{
+		img: "/examples/example1.jpg",
+		title: "🔐 Iniciar Sesión",
+		description: "Accede a tu cuenta de forma segura y rápida",
+		// icon: "🔐",
+	},
+	{
+		img: "/examples/example2.jpg",
+		title: "📝 Registrarse",
+		description: "Crea tu cuenta y únete a la comunidad universitaria",
+		// icon: "📝",
+	},
+	{
+		img: "/examples/example3.jpg",
+		title: "📱 Publicaciones",
+		description: "Comparte experiencias, fotos y momentos con tus compañeros",
+		// icon: "📱",
+	},
+	{
+		img: "/examples/example4.jpg",
+		title: "👥 Grupos y Búsquedas",
+		description: "Encuentra y únete a grupos de tu carrera o intereses",
+		// icon: "👥",
+	},
+	{
+		img: "/examples/example5.jpg",
+		title: "👤 Perfil",
+		description: "Personaliza tu perfil y muestra tu identidad universitaria",
+		// icon: "👤",
+	},
+	{
+		img: "/examples/example6.jpg",
+		title: "✏️ Editar Perfil",
+		description: "Actualiza tu información y mantén tu perfil al día",
+		// icon: "✏️",
+	},
+];
+---
+
+<section id="features">
+	<div class="features-header">
+		<h2>Funcionalidades Principales</h2>
+		<p>Descubre todo lo que UniWave tiene para ofrecerte</p>
+	</div>
+
+	<div class="features-grid">
+		{
+			features.map((feature) => (
+				<div class="feature-card">
+					<div class="feature-background">
+						<img src={feature.img} alt={feature.title} />
+						<div class="feature-overlay" />
+					</div>
+					<div class="feature-content">
+						{/* <div class="feature-icon">{feature.icon}</div> */}
+						<h3>{feature.title}</h3>
+						<p>{feature.description}</p>
+					</div>
+				</div>
+			))
+		}
+	</div>
+</section>
+
+<style>
+	.features-header {
+		text-align: center;
+		margin-bottom: 4rem;
+	}
+
+	.features-header h2 {
+		color: var(--text-color);
+		text-decoration: underline var(--primary-color);
+		font-size: 2.5rem;
+		margin: 0 0 1rem 0;
+		font-weight: 700;
+	}
+
+	.features-header p {
+		color: var(--text-color);
+		font-size: 1.1rem;
+		margin: 0;
+		opacity: 0.8;
+	}
+
+	/* Features Grid */
+	.features-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+		gap: 2.5rem;
+		max-width: 1400px;
+		margin: 0 auto;
+		padding: 0 1rem;
+	}
+
+	.feature-card {
+		position: relative;
+		border-radius: 20px;
+		overflow: hidden;
+		height: 280px;
+		transition: all 0.4s ease;
+		cursor: pointer;
+	}
+
+	.feature-card:hover {
+		transform: translateY(-8px);
+		box-shadow: 0 20px 40px rgba(129, 140, 248, 0.2);
+	}
+
+	.feature-background {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 1;
+	}
+
+	.feature-background img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.4s ease;
+	}
+
+	.feature-card:hover .feature-background img {
+		transform: scale(1.05);
+	}
+
+	.feature-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5));
+		z-index: 2;
+	}
+
+	.feature-content {
+		position: relative;
+		z-index: 3;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		padding: 2rem;
+		color: white;
+	}
+
+	.feature-icon {
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
+		filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+	}
+
+	.feature-content h3 {
+		color: white;
+		font-size: 1.4rem;
+		margin: 0 0 0.8rem 0;
+		font-weight: 600;
+		text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+	}
+
+	.feature-content p {
+		color: rgba(255, 255, 255, 0.95);
+		margin: 0;
+		font-size: 0.95rem;
+		line-height: 1.5;
+		text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+	}
+
+	/* Responsive */
+	@media (max-width: 1024px) {
+		.features-grid {
+			grid-template-columns: 2fr;
+			gap: 2rem;
+		}
+
+		.features-header h2 {
+			font-size: 2rem;
+		}
+
+		.feature-card {
+			height: 260px;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.features-grid {
+			grid-template-columns: 1fr;
+			gap: 1.5rem;
+			padding: 0 1rem;
+		}
+
+		.features-header {
+			margin-bottom: 3rem;
+		}
+
+		.features-header h2 {
+			font-size: 1.75rem;
+		}
+
+		.features-header p {
+			font-size: 1rem;
+		}
+
+		.feature-content {
+			padding: 1.5rem;
+		}
+
+		.feature-card {
+			height: 240px;
+		}
+
+		.feature-icon {
+			font-size: 2rem;
+		}
+
+		.feature-content h3 {
+			font-size: 1.3rem;
+		}
+
+		.feature-content p {
+			font-size: 0.95rem;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.features-grid {
+			gap: 1.2rem;
+			padding: 0 0.75rem;
+		}
+
+		.features-header {
+			margin-bottom: 2.5rem;
+		}
+
+		.features-header h2 {
+			font-size: 1.5rem;
+		}
+
+		.features-header p {
+			font-size: 0.95rem;
+		}
+
+		.feature-content {
+			padding: 1.25rem;
+		}
+
+		.feature-content h3 {
+			font-size: 1.2rem;
+			margin-bottom: 0.6rem;
+		}
+
+		.feature-content p {
+			font-size: 0.9rem;
+			line-height: 1.4;
+		}
+
+		.feature-card {
+			height: 220px;
+		}
+
+		.feature-icon {
+			font-size: 1.8rem;
+			margin-bottom: 0.8rem;
+		}
+	}
+
+	@media (max-width: 360px) {
+		.features-grid {
+			padding: 0 0.5rem;
+		}
+
+		.feature-content {
+			padding: 1rem;
+		}
+
+		.feature-content h3 {
+			font-size: 1.1rem;
+		}
+
+		.feature-content p {
+			font-size: 0.85rem;
+		}
+
+		.feature-card {
+			height: 200px;
+		}
+
+		.feature-icon {
+			font-size: 1.6rem;
+		}
+	}
+</style>

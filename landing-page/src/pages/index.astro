@@ -1,0 +1,437 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Features from "../components/Features.astro";
+import Footer from "../components/Footer.astro";
+import FAQ from "../components/FAQ.astro";
+---
+
+<MainLayout>
+	<!-- Hero -->
+	<section id="home">
+		<div class="hero">
+			<figure class="float">
+				<img src="/examples/example1.jpg" alt="" />
+			</figure>
+			<div>
+				<h1>
+					Conecta con tus compañeros, comparte experiencias y descubre todo lo
+					que pasa en tu universidad.
+				</h1>
+				<p>
+					Investiga, Comparte , Unete y en especial <strong>Diviertete</strong>
+				</p>
+				<a class="cta-button" href="#download">Descargar App</a>
+			</div>
+		</div>
+	</section>
+	<div class="scroll-indicator">
+		<a href="#features"><i class="bxr bx-arrow-down-circle"></i> </a>
+		<span>Ver Mas</span>
+	</div>
+
+	<!-- Features -->
+	<Features />
+
+	<!-- CTA Section -->
+	<section id="download">
+		<div class="cta-content">
+			<h2>¿Listo para empezar?</h2>
+			<p>Únete a miles de estudiantes que ya están usando UniWave</p>
+			<div class="cta-buttons">
+				<a href="#" class="store-button android-store">
+					<div class="store-icon">
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+							<path
+								d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"
+							></path>
+						</svg>
+					</div>
+					<div class="store-text">
+						<span class="store-label">Disponible en</span>
+						<span class="store-name">Google Play</span>
+					</div>
+				</a>
+				<a href="#" class="store-button apple-store disabled">
+					<div class="store-icon">
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+							<path
+								d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.44,15.65 20.06,16.66 20.09,16.67C20.06,16.74 19.67,18.11 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.46 12.36,4.26 13,3.5Z"
+							></path>
+						</svg>
+					</div>
+					<div class="store-text">
+						<span class="store-label">Próximamente en</span>
+						<span class="store-name">App Store</span>
+					</div>
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- Contact Section -->
+	<section id="contact">
+		<div class="contact-content">
+			<h2>¿Quieres aportar a este proyecto?</h2>
+			<p>Dinos tus ideas y sugerencias para mejorar UniWave.</p>
+			<div class="contact-info">
+				<div class="contact-email">
+					<div class="email-icon">💡</div>
+					<div class="email-details">
+						<h3>Envíanos tus ideas</h3>
+						<p>bandicoot.solutions@gmail.com</p>
+					</div>
+				</div>
+				<a href="mailto:bandicoot.solutions@gmail.com" class="contact-button">
+					Compartir Ideas
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<FAQ/>
+	<!-- Footer -->
+
+	<Footer />
+</MainLayout>
+
+<style>
+	section#home {
+		width: 100%;
+		min-height: 720px;
+		display: flex;
+		justify-content: center;
+		padding: 0 5%;
+		box-sizing: border-box;
+	}
+
+	.hero {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		gap: 2rem;
+	}
+
+	.hero h1 {
+		color: var(--text-color);
+		font-size: 2rem;
+		line-height: 1.3;
+		max-width: 600px;
+		text-align: start;
+	}
+
+	.hero p {
+		color: var(--text-color);
+		margin-bottom: 2rem;
+	}
+
+	.hero strong {
+		color: var(--primary-color);
+	}
+
+	.cta-button {
+		background: var(--primary-color);
+		color: white;
+		border: none;
+		padding: 1rem 2rem;
+		border-radius: 10px;
+		font-size: 1.1rem;
+		font-weight: 600;
+		cursor: pointer;
+		transition: all 0.3s ease;
+	}
+
+	.cta-button:hover {
+		background: var(--accent-color);
+		transform: translateY(-2px);
+	}
+
+	.hero figure img {
+		width: 300px;
+		border-radius: 10px;
+		box-shadow: 0 0 20px var(--primary-color);
+	}
+
+	/* CTA Section */
+	#download {
+		background: var(--bg-color);
+		padding: 6rem 2rem;
+		text-align: center;
+		margin: 6rem 0;
+	}
+
+	h2 {
+		color: var(--text-color);
+		text-decoration: underline var(--primary-color);
+		font-size: 2.5rem;
+		margin: 0 0 1rem 0;
+		font-weight: 700;
+	}
+
+	.cta-content p {
+		color: white;
+		font-size: 1.2rem;
+		margin-bottom: 2rem;
+		opacity: 0.9;
+	}
+
+	.cta-buttons {
+		display: flex;
+		gap: 2.5rem;
+		justify-content: center;
+		flex-wrap: wrap;
+		align-items: center;
+	}
+
+	.store-button {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		background: var(--primary-color);
+		color: white;
+		text-decoration: none;
+		padding: 1rem 1.75rem;
+		border-radius: 12px;
+		transition: all 0.3s ease;
+		min-width: 220px;
+		border: 2px solid var(--primary-color);
+	}
+
+	.store-button:hover {
+		transform: translateY(-3px);
+		box-shadow: 0 10px 25px rgba(129, 140, 248, 0.3);
+		background: var(--accent-color);
+		border-color: var(--accent-color);
+	}
+
+	.store-button.disabled {
+		opacity: 0.7;
+		cursor: not-allowed;
+		background: var(--bg-color);
+		border-color: var(--border-color);
+		color: var(--accent-color);
+	}
+
+	.store-button.disabled:hover {
+		transform: none;
+		box-shadow: none;
+		background: var(--bg-color);
+		border-color: var(--border-color);
+	}
+
+	.store-icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 32px;
+		height: 32px;
+	}
+
+	.store-icon svg {
+		width: 24px;
+		height: 24px;
+	}
+
+	.android-store .store-icon {
+		color: white;
+	}
+
+	.apple-store .store-icon {
+		color: white;
+	}
+
+	.store-text {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.store-label {
+		font-size: 0.75rem;
+		color: rgba(255, 255, 255, 0.8);
+		margin-bottom: 0.25rem;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+	}
+
+	.store-name {
+		font-size: 1.1rem;
+		font-weight: 600;
+		color: white;
+	}
+
+	/* Contact Section */
+	#contact {
+		background: var(--bg-color);
+		padding: 6rem 2rem;
+		text-align: center;
+		margin: 6rem 0;
+	}
+
+	.contact-content p {
+		color: var(--accent-color);
+		font-size: 1.2rem;
+		margin: 0 0 3rem 0;
+		opacity: 0.8;
+	}
+
+	.contact-info {
+		max-width: 600px;
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	.contact-email {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 1.5rem;
+		margin-bottom: 2rem;
+		padding: 2rem;
+		background: rgba(255, 255, 255, 0.05);
+		border-radius: 16px;
+		border: 1px solid var(--border-color);
+	}
+
+	.email-icon {
+		font-size: 2.5rem;
+		width: 60px;
+		height: 60px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: var(--primary-color);
+		border-radius: 50%;
+		color: white;
+	}
+
+	.email-details h3 {
+		color: var(--text-color);
+		font-size: 1.2rem;
+		margin: 0 0 0.5rem 0;
+		font-weight: 600;
+	}
+
+	.email-details p {
+		color: var(--accent-color);
+		margin: 0;
+		font-size: 1.1rem;
+		opacity: 0.9;
+	}
+
+	.contact-button {
+		display: inline-block;
+		background: var(--primary-color);
+		color: white;
+		text-decoration: none;
+		padding: 1rem 2rem;
+		border-radius: 12px;
+		font-size: 1.1rem;
+		font-weight: 600;
+		transition: all 0.3s ease;
+		border: 2px solid var(--primary-color);
+	}
+
+	.contact-button:hover {
+		background: var(--accent-color);
+		border-color: var(--accent-color);
+		transform: translateY(-2px);
+		box-shadow: 0 10px 25px rgba(129, 140, 248, 0.3);
+	}
+
+	.scroll-indicator {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 5px;
+		font-family: sans-serif;
+		font-size: 0.9rem;
+		color: #666;
+		cursor: pointer;
+		margin-bottom: 4rem;
+	}
+
+	.scroll-indicator span {
+		font-size: large;
+	}
+
+	a {
+		color: var(--primary-color);
+		font-size: xx-large;
+	}
+
+	/* Responsive */
+	@media (max-width: 768px) {
+		.scroll-indicator {
+			display: none;
+		}
+
+		.hero {
+			flex-direction: column-reverse;
+			text-align: center;
+		}
+
+		.hero h1 {
+			text-align: center !important;
+		}
+
+		.cta-buttons {
+			flex-direction: column;
+			align-items: center;
+			gap: 1rem;
+		}
+
+		.store-button {
+			width: 100%;
+			max-width: 300px;
+			justify-content: center;
+		}
+
+		.footer-links {
+			gap: 1.5rem;
+		}
+
+		/* Contact responsive */
+
+		.contact-content p {
+			font-size: 1.1rem;
+		}
+
+		.contact-email {
+			padding: 1.5rem;
+			flex-direction: column;
+			gap: 1rem;
+		}
+
+		.email-icon {
+			font-size: 2rem;
+			width: 50px;
+			height: 50px;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.hero figure img {
+			width: 250px;
+		}
+
+		.hero h1 {
+			font-size: 1.5rem;
+		}
+
+		#cta {
+			padding: 3rem 1rem;
+		}
+
+		/* Contact responsive small */
+		.contact-email {
+			padding: 1.25rem;
+			margin: 0 0.5rem;
+		}
+
+		.contact-button {
+			padding: 0.875rem 1.5rem;
+			font-size: 1rem;
+		}
+	}
+</style>

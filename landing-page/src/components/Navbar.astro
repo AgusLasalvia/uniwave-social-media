@@ -1,0 +1,129 @@
+---
+const links = [
+	{ label: "Home", href: "/#" },
+	{ label: "Features", href: "/#features" },
+	{ label: "Contact", href: "/#contact" },
+	{ label: "FAQ", href: "/#faq" },
+];
+---
+
+<header>
+	<nav>
+		<!-- Logo -->
+		<a href="#hero" class="logo">
+			<img src="/logo.png" alt="App Logo" />
+			<span>UniWave</span>
+		</a>
+
+		<div>
+			<!-- Links -->
+			<ul class="nav-links">
+				{
+					links.map((link) => (
+						<li>
+							<a class="nav-link" href={link.href}>
+								{link.label}
+							</a>
+						</li>
+					))
+				}
+			</ul>
+			<a id="btn-download" class="btn-download" href="#download">Download</a>
+
+			<!-- Download Button -->
+		</div>
+	</nav>
+</header>
+
+<style>
+	header {
+		width: 100%;
+		background: var(--background-color);
+		padding: 1.5rem 3rem;
+		position: sticky;
+		top: 0;
+		z-index: 1000;
+	}
+	nav a {
+		text-decoration: none;
+	}
+	nav {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		max-width: 1200px;
+		margin: 0 auto;
+		gap: 3rem;
+		border: 1.5px solid var(--primary-color);
+		background-color: var(--bg-color);
+		height: 70px;
+		border-radius: 10px;
+	}
+
+	nav > div {
+		margin-right: 20px;
+		display: flex;
+		align-items: center;
+	}
+
+	/* Logo */
+	.logo {
+		margin-left: 20px;
+		display: flex;
+		align-items: center;
+		font-weight: bold;
+		font-size: 1.3rem;
+		color: var(--text-color);
+		gap: 1rem;
+	}
+
+	.logo img {
+		width: 45px;
+		height: 45px;
+	}
+
+	/* Links */
+	.nav-links {
+		display: flex;
+		gap: 2.5rem;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.nav-link {
+		color: var(--text-color);
+		transition: color 0.2s ease;
+		font-size: 1rem;
+	}
+
+	.nav-link:hover {
+		color: var(--primary-color);
+	}
+
+	/* Download button */
+	.btn-download {
+		background: var(--primary-color);
+		color: white;
+		padding: 0.7rem 1.4rem;
+		border-radius: 10px;
+		font-weight: 500;
+		transition: background 0.3s;
+		margin-left: 2rem;
+	}
+
+	.btn-download:hover {
+		background: var(--accent-color);
+	}
+
+	/* Responsive */
+	@media (max-width: 768px) {
+		.nav-links {
+			display: none;
+		}
+
+		header {
+			padding: 8px;
+		}
+	}
+</style>
