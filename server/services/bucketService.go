@@ -9,7 +9,7 @@ import (
 	"github.com/minio/minio-go/v7"
 )
 
-// Sube un archivo dentro de "carpeta" del usuario
+
 func UploadUserFile(userID string, fileHeader *multipart.FileHeader) (string, error) {
 	file, err := fileHeader.Open()
 	if err != nil {
@@ -21,7 +21,7 @@ func UploadUserFile(userID string, fileHeader *multipart.FileHeader) (string, er
 
 	_, err = config.MinioClient.PutObject(
 		context.Background(),
-		"avatars", // nombre del bucket
+		"avatars", 
 		objectName,
 		file,
 		fileHeader.Size,
