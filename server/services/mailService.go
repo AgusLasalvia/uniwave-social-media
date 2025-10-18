@@ -34,7 +34,7 @@ func SendActivationEmail(to string, data ActivationData) error {
 	m.SetHeader("From", mailUsername)
 	m.SetHeader("To", to)
 	m.SetHeader("Subject", "Activa tu cuenta en UniWave")
-	m.SetBody("text/html", body.String()) // cuerpo del mail = tu HTML ya renderizado
+	m.SetBody("text/html", body.String()) 
 
 	// 4. Configurar SMTP
 	d := mail.NewDialer("smtp.gmail.com", 587, mailUsername, mailAppPassword)
