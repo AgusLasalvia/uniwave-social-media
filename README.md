@@ -35,7 +35,8 @@ uniwave busca ofrecer una experiencia moderna y accesible donde los estudiantes 
 La arquitectura del proyecto está dividida en tres capas principales:
 1. **Frontend móvil (React Native + Expo)** — experiencia de usuario.
 2. **Backend (Go + Gin)** — gestión de usuarios, publicaciones y autenticación.
-3. **Servicios locales (MinIO + Firestore)** — persistencia de datos y almacenamiento de archivos.
+3. **Servicios locales (MinIO)** — almacenamiento de archivos.
+4. **Firestore** — persistencia de datos.
 
 ---
 
